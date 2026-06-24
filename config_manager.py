@@ -1,29 +1,33 @@
-from kazoo.client import KazooClient
 import json
 
 
-def setup_config():
-    zk = KazooClient(hosts='127.0.0.1:2181')
-    zk.start()
-
-    #parametry symulacji
-    config_data = {
-        "sheep_speed": 3.0,
-        "dog_speed": 6.0,
-        "repulsion_radius": 100.0,
-        "learning_rate": 0.0001,
-        "ent_coef": 0.005
+def create_default_config():
+    config = {
+        "env_config": {
+            "sheep_speed": 3.0,
+            "dog_speed": 4.5,
+            "repulsion_radius": 115.0,
+            "num_sheeps": 2
+        },
+        "ppo_config": {
+            "learning_rate": 5e-5,  # Zmniejszony krok dla stabilizacji polityki
+            "n_steps": 2048,
+            "batch_size": 64,
+            "n_epochs": 10,
+            "gamma": 0.99,
+            "gae_lambda": 0.95,
+            "clip_range": 0.2,
+            "ent_coef": 0.0,
+            "vf_coef": 0.5,
+            "max_grad_norm": 0.5
+        },
+        "total_timesteps": 253952
     }
 
-    #zapisanie w zookeeperze
-    if not zk.exists("/sheep_config"):
-        zk.create("/sheep_config", json.dumps(config_data).encode('utf-8'))
-    else:
-        zk.set("/sheep_config", json.dumps(config_data).encode('utf-8'))
-
-    zk.stop()
+    with open("config.json", "w") as f:
+        json.dump(config, f, indent=4)
+    print("Zapisano bezpieczną konfigurację v6 w pliku config.json")
 
 
 if __name__ == "__main__":
-    setup_config()
-    print("Konfiguracja wysłana do Zookeepera!")
+    create_default_config()
