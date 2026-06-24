@@ -1,0 +1,21 @@
+{
+    "env_config": {
+        "sheep_speed": 3.0,
+        "dog_speed": 4.5,
+        "repulsion_radius": 115.0,
+        "num_sheeps": 2
+    },
+    "ppo_config": {
+        "learning_rate": 5e-05,
+        "n_steps": 2048,
+        "batch_size": 64,
+        "n_epochs": 10,
+        "gamma": 0.99,
+        "gae_lambda": 0.95,
+        "clip_range": 0.2,
+        "ent_coef": 0.0,
+        "vf_coef": 0.5,
+        "max_grad_norm": 0.5
+    },
+    "total_timesteps": 253952
+}
