@@ -43,7 +43,8 @@ class AcademicDiagnosticsCallback(BaseCallback):
         logger = self.model.logger
         explained_var = logger.name_to_value.get("train/explained_variance", np.nan)
         value_loss = logger.name_to_value.get("train/value_loss", np.nan)
-        policy_loss = logger.name_to_value.get("train/policy_loss", np.nan)
+        # POPRAWKA KLUCZA: Zmiana z policy_loss na policy_gradient_loss
+        policy_loss = logger.name_to_value.get("train/policy_gradient_loss", np.nan)
 
         print("\n" + "=" * 60)
         print("   GLOBALNY ZAAWANSOWANY RAPORT DIAGNOSTYCZNY (RL-METRICS)")
@@ -90,37 +91,62 @@ def train():
 
     env_config = config.get("env_config", {})
     ppo_config = config.get("ppo_config", {})
-    total_timesteps = config.get("total_timesteps", 253952)
 
+    # 1. Inicjalizujemy środowisko (które ma już w sobie dynamiczne max_steps z poprzedniego kroku)
     env = SheepDogEnv(config=env_config)
 
-    # Klasyczne, wygładzone PPO bez SDE i z mniejszym learning rate
-    model = PPO(
-        "MlpPolicy",
-        env,
-        verbose=1,
-        learning_rate=ppo_config.get("learning_rate", 5e-5),
-        n_steps=ppo_config.get("n_steps", 2048),
-        batch_size=ppo_config.get("batch_size", 64),
-        n_epochs=10,
-        gamma=ppo_config.get("gamma", 0.99),
-        gae_lambda=ppo_config.get("gae_lambda", 0.95),
-        clip_range=0.2,
-        ent_coef=0.001,  # Delikatna entropia stymulująca lekką, zdrową eksplorację
-        vf_coef=0.5,
-        max_grad_norm=0.5,
-        target_kl=0.02,  # Pozostawiamy bezpiecznik, ale teraz nie powinien strzelać
-        seed=42
-    )
+    # 2. DYNAMICZNE WYLICZANIE MATEMATYCZNE (Twój wzór):
+    # Pobieramy realne wartości prosto z obiektu środowiska
+    num_sheeps = env.num_sheeps
+    max_steps = env.max_steps
+
+    total_timesteps = 125 * num_sheeps * max_steps
+
+    print("-" * 60)
+    print(f"[MATEMATYCZNY BUDŻET TRENINGOWY]")
+    print(f"  Liczba owiec: {num_sheeps}")
+    print(f"  Długość iteracji (max_steps): {max_steps}")
+    print(f"  Wyliczone total_timesteps: {total_timesteps}")
+    print("-" * 60)
+
+    model_filename = "ppo_sheep_dog_stable"
+    model_zip_path = f"{model_filename}.zip"
+
+    # LOGIKA AUTO-WCZYTYWANIA MODELU
+    if os.path.exists(model_zip_path):
+        print(f"\n[!] Znaleziono zapisany model '{model_zip_path}'. Wczytuję do kontynuacji treningu...")
+        model = PPO.load(model_filename, env=env)
+        model.learning_rate = ppo_config.get("learning_rate", 5e-5)
+    else:
+        print("\n[!] Brak zapisanego modelu. Tworzę nową sieć od zera...")
+        model = PPO(
+            "MlpPolicy",
+            env,
+            verbose=1,
+            learning_rate=ppo_config.get("learning_rate", 5e-5),
+            n_steps=ppo_config.get("n_steps", 2048),
+            batch_size=ppo_config.get("batch_size", 64),
+            n_epochs=10,
+            gamma=ppo_config.get("gamma", 0.99),
+            gae_lambda=ppo_config.get("gae_lambda", 0.95),
+            clip_range=0.2,
+            ent_coef=0.001,
+            vf_coef=0.5,
+            max_grad_norm=0.5,
+            target_kl=0.02,
+            seed=42
+        )
 
     diagnostics_callback = AcademicDiagnosticsCallback()
 
-    print("Uruchamianie treningu v6 (Zbalansowane Nagrody + Wygładzone Akcje)...")
-    model.learn(total_timesteps=total_timesteps, callback=diagnostics_callback)
-    diagnostics_callback.log_final_report(env)
-    model.save("ppo_sheep_dog_stable")
-    print("Trening zakończony.")
+    # Przekazujemy dynamicznie obliczoną wartość do procesu uczenia
+    print(f"Uruchamianie treningu (sesja: {total_timesteps} kroków)...")
+    model.learn(total_timesteps=total_timesteps, callback=diagnostics_callback, reset_num_timesteps=False)
 
+    diagnostics_callback.log_final_report(env)
+
+    model.save(model_filename)
+    print(f"Model został zaktualizowany i zapisany jako '{model_zip_path}'.")
 
 if __name__ == "__main__":
     train()

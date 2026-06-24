@@ -7,7 +7,7 @@ def create_default_config():
             "sheep_speed": 3.0,
             "dog_speed": 4.5,
             "repulsion_radius": 115.0,
-            "num_sheeps": 2
+            "num_sheeps": 3
         },
         "ppo_config": {
             "learning_rate": 5e-5,  # Zmniejszony krok dla stabilizacji polityki
@@ -21,7 +21,7 @@ def create_default_config():
             "vf_coef": 0.5,
             "max_grad_norm": 0.5
         },
-        "total_timesteps": 253952
+        "total_timesteps": 100000
     }
 
     with open("config.json", "w") as f:

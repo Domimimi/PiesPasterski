@@ -4,20 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d4cadf1a-33c5-4074-b40a-f013c70e5c3c" name="Changes" comment="new files">
-      <change afterPath="$PROJECT_DIR$/.idea/PiesPasterski.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/train_diagnostics.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tune.py" afterDir="false" />
+    <list default="true" id="d4cadf1a-33c5-4074-b40a-f013c70e5c3c" name="Changes" comment="nowy model dwie owce">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/config.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/config_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ppo_sheep_dog_stable.zip" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/sheep_env.py" beforeDir="false" afterPath="$PROJECT_DIR$/sheep_env.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sheepdog_final_model.zip" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/train.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/train_diagnostics.py" beforeDir="false" afterPath="$PROJECT_DIR$/train_diagnostics.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,25 +52,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.config_manager.executor": "Run",
-    "Python.main.executor": "Run",
-    "Python.sheep_env.executor": "Run",
-    "Python.test.executor": "Run",
-    "Python.train.executor": "Run",
-    "Python.train_diagnostics.executor": "Run",
-    "Python.tune.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.config_manager.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.sheep_env.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.train.executor&quot;: &quot;Run&quot;,
+    &quot;Python.train_diagnostics.executor&quot;: &quot;Run&quot;,
+    &quot;Python.tune.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Twili\PycharmProjects\PiesPasterski" />
@@ -111,7 +105,7 @@
       <workItem from="1782122111544" duration="2330000" />
       <workItem from="1782131442162" duration="5823000" />
       <workItem from="1782143877428" duration="1791000" />
-      <workItem from="1782286487937" duration="15442000" />
+      <workItem from="1782286487937" duration="21021000" />
     </task>
     <task id="LOCAL-00001" summary="new files">
       <option name="closed" value="true" />
@@ -121,7 +115,31 @@
       <option name="project" value="LOCAL" />
       <updated>1774610847001</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="nowy model dwie owce">
+      <option name="closed" value="true" />
+      <created>1782302479791</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1782302479791</updated>
+    </task>
+    <task id="LOCAL-00003" summary="nowy model dwie owce">
+      <option name="closed" value="true" />
+      <created>1782302640513</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1782302640513</updated>
+    </task>
+    <task id="LOCAL-00004" summary="nowy model dwie owce">
+      <option name="closed" value="true" />
+      <created>1782302651198</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1782302651198</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -129,15 +147,16 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="new files" />
-    <option name="LAST_COMMIT_MESSAGE" value="new files" />
+    <MESSAGE value="nowy model dwie owce" />
+    <option name="LAST_COMMIT_MESSAGE" value="nowy model dwie owce" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/PiesPasterski$config_manager.coverage" NAME="config_manager Coverage Results" MODIFIED="1782301392635" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/PiesPasterski$train_diagnostics.coverage" NAME="train_diagnostics Coverage Results" MODIFIED="1782301874228" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/PiesPasterski$config_manager.coverage" NAME="config_manager Coverage Results" MODIFIED="1782307633315" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/PiesPasterski$train_diagnostics.coverage" NAME="train_diagnostics Coverage Results" MODIFIED="1782307643905" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/PiesPasterski$main.coverage" NAME="main Coverage Results" MODIFIED="1774610589478" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/PiesPasterski$tune.coverage" NAME="tune Coverage Results" MODIFIED="1782144168065" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/PiesPasterski$sheep_env.coverage" NAME="sheep_env Coverage Results" MODIFIED="1782299986435" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/PiesPasterski$test.coverage" NAME="test Coverage Results" MODIFIED="1782301789578" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/PiesPasterski$test.coverage" NAME="test Coverage Results" MODIFIED="1782306941642" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/PiesPasterski$train.coverage" NAME="train Coverage Results" MODIFIED="1782291627832" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

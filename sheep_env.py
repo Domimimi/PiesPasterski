@@ -22,7 +22,10 @@ class SheepDogEnv(gym.Env):
         self.repulsion_radius = config.get("repulsion_radius", 115.0)
         self.num_sheeps = config.get("num_sheeps", 2)
 
-        self.max_steps = 1000
+        if self.num_sheeps == 1:
+            self.max_steps = 1000
+        else:
+            self.max_steps = self.num_sheeps * 500
         self.current_step = 0
 
         self.action_space = spaces.Box(low=-1.0, high=1.0, shape=(2,), dtype=np.float32)
@@ -152,8 +155,8 @@ class SheepDogEnv(gym.Env):
             reward += 0.02 * (1.0 - (dist_to_ideal / self.map_size))
             if alignment > 0.707:
                 reward += 0.005
-
-        reward -= 0.005  # Delikatna presja czasu
+        time_penalty = 3.0 / self.max_steps
+        reward -= time_penalty  # Delikatna presja czasu
 
         terminated = False
         if len(self.scored_sheep) == self.num_sheeps:
